@@ -11,9 +11,9 @@ double trapezoid_richardson(const double a, const double b, const int n, fptr fu
 template <typename fptr>
 double simpson(const double a, const double b, const int n, fptr func);
 
-int main(void)
+int main(int argc , char **argv)
 {
-  const int N = 20;
+  const int N = std::atoi(argv[1]);
   auto myfun = [](double x){return std::sin(x); };
   std::cout.precision(15); std::cout.setf(std::ios::scientific);
 
@@ -26,14 +26,14 @@ int main(void)
   std::cout << "Non-regular integral is : " << trapezoid_irregular(x, f) << std::endl;
 
   // test on regular
-  std::cout << "Regular integral (n = 20) is : " << trapezoid_regular(0, M_PI, 20, myfun) << std::endl;
-  std::cout << "Regular integral (n = 40) is : " << trapezoid_regular(0, M_PI, 40, myfun) << std::endl;
+  std::cout << "Regular integral (n = " << N << ") is : " << trapezoid_regular(0, M_PI, N, myfun) << std::endl;
+  std::cout << "Regular integral (n = " << 2*N << ") is : " << trapezoid_regular(0, M_PI, 2*N, myfun) << std::endl;
 
   // test with Richardson
-  std::cout << "Richardson integral (n = 20) is : " << trapezoid_richardson(0, M_PI, 20, myfun) << std::endl;
+  std::cout << "Richardson integral (n = " << N << ") is : " << trapezoid_richardson(0, M_PI, N, myfun) << std::endl;
 
   // test with Simpson
-  std::cout << "Simpson integral (n = 20) is : " << simpson(0, M_PI, 20, myfun) << std::endl;
+  std::cout << "Simpson integral (n = " << N << ") is : " << simpson(0, M_PI, N, myfun) << std::endl;
 
 
   return 0;
