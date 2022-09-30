@@ -28,6 +28,8 @@ int main(int argc, char **argv)
             << trapezoid_regular(0, M_PI, N, myfun) << std::endl;
   std::cout << "Regular integral (n = " << 2*N << ") is : "
             << trapezoid_regular(0, M_PI, 2*N, myfun) << std::endl;
+  std::cout << "Regular integral (n = " << 10*N << ") is : "
+            << trapezoid_regular(0, M_PI, 10*N, myfun) << std::endl;
 
   // test with Richardson
   std::cout << "Richardson integral (n = " << N << ") is : "
