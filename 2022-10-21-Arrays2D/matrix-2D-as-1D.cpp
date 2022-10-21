@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
   std::vector<double> array2d_T(M*N, 0.0);
   transpose_matrix(array2d, M, N, array2d_T);
-  print_matrix(array2d_T, M, N);
+  print_matrix(array2d_T, N, M);
 
   return 0;
 }
@@ -49,7 +49,7 @@ void transpose_matrix(const std::vector<double> & datain, int m, int n,
 {
   for (int ii = 0; ii < m; ++ii) {
     for (int jj = 0; jj < n; ++jj) {
-      dataout[jj*n + ii] = datain[ii*n + jj]; // Error here
+      dataout[jj*m + ii] = datain[ii*n + jj]; // Error here
     }
   }
 }
