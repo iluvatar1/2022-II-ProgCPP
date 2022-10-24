@@ -2,12 +2,8 @@
 
 int main(int arg, char **argv) {
 
-  double a = 10.9;
-
   double * data;
   data = new double [20]; // ask for memory
-
-  double b = 11.987;
 
   std::cout << "data[0] = " << data[0] << std::endl;
   std::cout << "&data[0] = " << &data[0] << std::endl;
