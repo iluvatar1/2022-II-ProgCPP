@@ -21,6 +21,16 @@ int main(int arg, char **argv) {
   return 0;
 }
 
-// data[5] -> data + 5 * sizeof(double)
-// data[20] -> data + 20 * sizeof(double)
-// data[-1] -> data - 1 * sizeof(double)
+void fill(double * array, int size) {
+  for (int ii = 0; ii < size; ii++) {
+    array[ii] = ii;
+  }
+}
+
+double average(double * array, int size) {
+  double suma = 0.0;
+  for (int ii = 0; ii < size; ii++) {
+    suma += array[ii];
+  }
+  return suma/size;
+}
