@@ -17,9 +17,9 @@ class Collider {
       for (auto & p : parray) {
         // gravity force
         p.F[2] += p.mass*params["G"];
-        // TODO: force with floor
 
-        }
+        TODO: force with floor
+
       }
     }
 };
