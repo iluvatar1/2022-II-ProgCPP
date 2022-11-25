@@ -6,4 +6,7 @@ struct Particle {
   double mass{0.0}, rad{0.0};
   Particle();
   void print(void);
+  // overload the cout operator: friend declared to acces possible private data
+  // see: https://www.learncpp.com/cpp-tutorial/overloading-the-io-operators/
+  friend std::ostream& operator<< (std::ostream& out, const Particle & p);
 };
