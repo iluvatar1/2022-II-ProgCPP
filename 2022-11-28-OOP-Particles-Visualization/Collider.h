@@ -22,6 +22,7 @@ class Collider {
         double delta = p.rad - p.R[2];
         if (delta > 0) {
           p.F[2] += params["K"]*delta;
+          p.F[2] -= params["B"]*p.mass*p.V[2];
         }
       }
     }
